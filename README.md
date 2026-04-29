@@ -6,7 +6,7 @@ Built with React + Vite, powered by Google Gemini API, deployed on Vercel.
 
 ## 🔗 Live Demo
 
-**[→ Try it live](https://persona-chatbot.vercel.app)**
+**[→ Try it live](https://persona-chatbot-bvt7.vercel.app)**
 
 ## ✨ Features
 
