@@ -1,0 +1,116 @@
+.persona-switcher {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+}
+
+.persona-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.persona-tab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.persona-tab[data-persona="anshuman"]::before {
+  background: linear-gradient(135deg, var(--accent-anshuman-soft), var(--accent-anshuman-glow));
+}
+
+.persona-tab[data-persona="abhimanyu"]::before {
+  background: linear-gradient(135deg, var(--accent-abhimanyu-soft), var(--accent-abhimanyu-glow));
+}
+
+.persona-tab[data-persona="kshitij"]::before {
+  background: linear-gradient(135deg, var(--accent-kshitij-soft), var(--accent-kshitij-glow));
+}
+
+.persona-tab:hover::before {
+  opacity: 0.5;
+}
+
+.persona-tab.active::before {
+  opacity: 1;
+}
+
+.persona-tab.active {
+  box-shadow: var(--shadow-glow);
+}
+
+.persona-tab[data-persona="anshuman"].active {
+  box-shadow: 0 0 20px var(--accent-anshuman-glow);
+}
+
+.persona-tab[data-persona="abhimanyu"].active {
+  box-shadow: 0 0 20px var(--accent-abhimanyu-glow);
+}
+
+.persona-tab[data-persona="kshitij"].active {
+  box-shadow: 0 0 20px var(--accent-kshitij-glow);
+}
+
+.persona-emoji {
+  font-size: 1.5rem;
+  z-index: 1;
+}
+
+.persona-info {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  text-align: left;
+}
+
+.persona-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.persona-title {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* ── Mobile ──────────────────────────── */
+@media (max-width: 640px) {
+  .persona-switcher {
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .persona-tab {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .persona-emoji {
+    font-size: 1.25rem;
+  }
+
+  .persona-name {
+    font-size: 0.75rem;
+  }
+
+  .persona-title {
+    display: none;
+  }
+}
